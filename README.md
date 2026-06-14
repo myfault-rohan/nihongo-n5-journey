@@ -1,7 +1,5 @@
 # 🎌 Nihongo N5 Journey
 
-![Nihongo Dashboard](brain/114b3402-d731-42f2-a1dd-b5490c05c1a4/v2_home_1781355791707.png)
-
 A comprehensive, scientifically-backed React application for mastering the Japanese Language Proficiency Test (JLPT) N5. Designed for learners who want more than just gamification, it combines traditional aesthetic principles with rigorous cognitive science tools.
 
 ---
@@ -25,26 +23,32 @@ Moving beyond basic multiple-choice quizzes, we implemented techniques used by s
 
 ---
 
-## 📸 Features Gallery
+## ✨ Features
 
-| Writing Practice ✍️ | Sentence Builder 🧩 |
-| :---: | :---: |
-| ![Writing](brain/114b3402-d731-42f2-a1dd-b5490c05c1a4/v2_writing_1781355819024.png) | ![Builder](brain/114b3402-d731-42f2-a1dd-b5490c05c1a4/v2_builder_1781355847542.png) |
-| **Trace characters over a ghost guide with an interactive ink brush algorithm.** | **Drag and drop words to form context-heavy grammar sentences.** |
-
-| Spaced Repetition 🃏 | Shadowing Practice 🗣️ |
-| :---: | :---: |
-| ![SRS](brain/114b3402-d731-42f2-a1dd-b5490c05c1a4/v2_flashcard_srs_1781355879161.png) | ![Shadowing](brain/114b3402-d731-42f2-a1dd-b5490c05c1a4/v2_shadowing_1781355833429.png) |
-| **Grade your flashcards and clear your "Today's Review" queue every day.** | **Adjust audio speed and speak along to train your pronunciation rhythm.** |
+| Feature | Description |
+|---|---|
+| 🔤 Hiragana & Katakana | Full character chart with audio pronunciation |
+| 🀄 Kanji | N5 Kanji with meanings, readings & stroke guides |
+| 📚 Vocabulary | 800+ N5 words with spaced repetition flashcards |
+| 📝 Grammar | Structured N5 grammar lessons with examples |
+| ✍️ Writing Practice | Draw characters on an interactive ink-brush canvas |
+| 📖 Reading | Graded N5 reading passages with comprehension checks |
+| 🎧 Listening | Audio-based listening comprehension quizzes |
+| 🗣️ Shadowing | Speak along with native audio to train pronunciation |
+| 🧩 Sentence Builder | Drag-and-drop SOV sentence construction |
+| 🃏 Flashcards | SRS-powered vocab review with difficulty grading |
+| 📊 Mock Test | Full timed JLPT N5 mock exam with scoring |
+| 🌙 Dark Mode | Premium dark theme that persists across sessions |
 
 ---
 
 ## 🛠️ Architecture
 
-- **Frontend:** React.js, Context API, CSS-in-JS (Vanilla styles).
-- **Backend:** Node.js, Express.js.
-- **Database:** Local JSON File (`data.json`) for simple, secure, single-user persistence.
-- **Audio:** Web Speech API (TTS) and Web Audio API (Oscillators).
+- **Frontend:** React.js, Context API, CSS-in-JS (Vanilla styles)
+- **Backend:** Node.js, Express.js (Vercel Serverless Functions in production)
+- **Persistence:** `localStorage` for progress & SRS data
+- **Audio:** Web Speech API (TTS) and Web Audio API (Oscillators)
+- **Deployment:** Vercel (frontend + serverless API)
 
 ---
 
@@ -54,20 +58,27 @@ Moving beyond basic multiple-choice quizzes, we implemented techniques used by s
 You need [Node.js](https://nodejs.org/) installed on your machine.
 
 ### Installation
-1. Clone the repository and navigate to the project directory:
+
+1. Clone the repository:
    ```bash
-   cd japanese-learn
+   git clone https://github.com/myfault-rohan/nihongo-n5-journey.git
+   cd nihongo-n5-journey
    ```
-2. Install the dependencies:
+
+2. Install dependencies:
    ```bash
    npm install
    ```
-3. *(Optional)* The app comes with a single-user login system to protect your progress. The default credentials are:
-   - **Username:** `rohan phirke`
-   - **Password:** `rohan@234`
 
-### Running the App
-To run both the React frontend (port 3000) and the Node backend (port 3001) simultaneously, use the dev command:
+3. Set up your environment variables by copying the example file:
+   ```bash
+   cp .env.example .env
+   ```
+   Then open `.env` and set your own `AUTH_USERNAME`, `AUTH_PASSWORD`, and `AUTH_TOKEN`.
+
+### Running Locally
+
+To run both the React frontend (port 3000) and the Node backend (port 3001) simultaneously:
 ```bash
 npm run dev
 ```
@@ -76,4 +87,20 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to begin you
 
 ---
 
-*“A journey of a thousand miles begins with a single step.” — がんばって！*
+## ☁️ Deploying to Vercel
+
+1. Push this repo to GitHub.
+2. Import the project in [Vercel](https://vercel.com).
+3. Add the following **Environment Variables** in your Vercel project settings:
+
+   | Variable | Description |
+   |---|---|
+   | `AUTH_USERNAME` | Your login username |
+   | `AUTH_PASSWORD` | Your login password |
+   | `AUTH_TOKEN` | A secret token string |
+
+4. Deploy — Vercel will automatically run `npm run build` and serve the app.
+
+---
+
+*"A journey of a thousand miles begins with a single step." — がんばって！*
