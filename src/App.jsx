@@ -27,7 +27,7 @@ export default function App() {
       const next = !prev;
       localStorage.setItem('nihongo-dark-mode', String(next));
       if (token) {
-        fetch('http://localhost:3001/api/data', {
+        fetch('/api/data', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
           body: JSON.stringify({ theme: next ? 'dark' : 'light' })
@@ -52,7 +52,7 @@ export default function App() {
   // Fetch initial data on login
   useEffect(() => {
     if (!token) return;
-    fetch('http://localhost:3001/api/data', {
+    fetch('/api/data', {
       headers: { 'Authorization': `Bearer ${token}` }
     })
     .then(res => res.json())
@@ -113,7 +113,7 @@ export default function App() {
       
       // Async sync to backend
       if (token) {
-        fetch('http://localhost:3001/api/data', {
+        fetch('/api/data', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
           body: JSON.stringify({ progress: next })
