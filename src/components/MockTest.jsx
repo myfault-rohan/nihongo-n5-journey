@@ -18,6 +18,7 @@ export default function MockTest({ onProgress }) {
   const [answers, setAnswers] = useState({});
   const [scoreInfo, setScoreInfo] = useState({ correct: 0, total: 55, scaled: 0 });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     let timer;
     if (activeSection >= 1 && activeSection <= 3 && timeLeft > 0) {
@@ -331,6 +332,7 @@ export default function MockTest({ onProgress }) {
   const isReading = activeSection === 3;
   
   const sectionTitle = isVocab ? "Vocabulary" : isGrammar ? "Grammar" : "Reading";
+  // eslint-disable-next-line no-unused-vars
   const sectionTotal = isVocab ? 25 : isGrammar ? 20 : 5;
 
   return (

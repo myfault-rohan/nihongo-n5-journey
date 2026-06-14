@@ -14,7 +14,7 @@ import SentenceBuilder from "./components/SentenceBuilder";
 import Login from "./components/Login";
 import { lightTheme, darkTheme } from "./styles/theme";
 import { playNav } from "./utils/sounds";
-import { loadSRSData, saveSRSData } from "./utils/srs";
+import { saveSRSData } from "./utils/srs";
 
 export default function App() {
   const [token, setToken] = useState(() => localStorage.getItem('nihongo-auth-token') || null);

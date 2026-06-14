@@ -74,6 +74,7 @@ export default function Flashcards({ onProgress }) {
     setFlipped(false);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const markLearned = () => {
     if (!card) return;
     setLearned((prev) => {

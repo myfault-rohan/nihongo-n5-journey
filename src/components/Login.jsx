@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { theme as THEME, darkTheme } from "../styles/theme";
+import { darkTheme } from "../styles/theme";
 
 export default function Login({ onLogin }) {
   const [username, setUsername] = useState("");

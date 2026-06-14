@@ -43,6 +43,7 @@ export default function CharChart({ type = "hiragana", onProgress }) {
     });
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (onProgress) onProgress(learned.size);
   }, [learned.size]);
